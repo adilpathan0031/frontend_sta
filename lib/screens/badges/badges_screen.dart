@@ -193,7 +193,9 @@ class BadgesScreen extends StatelessWidget {
                       color: Colors.grey[600],
                     ),
                   ),
+                  const SizedBox(height: 50),
                 ],
+                
               ),
             ),
             // Lock Icon

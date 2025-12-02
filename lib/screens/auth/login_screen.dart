@@ -116,9 +116,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: () {
-                           Navigator.push(
-                          context,MaterialPageRoute(builder: (context) => DashboardScreen())
-                          );
+                        Navigator.of(context).pushNamedAndRemoveUntil('/dashboard', (route) => false);
+                          
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.black, // Black background
@@ -139,11 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Center(
                         child: GestureDetector(
                           onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>  SignupScreen()),
-                        );
+                       Navigator.of(context).pushNamed('/signup');
                       },
                           child: RichText(
                             text: TextSpan(
@@ -167,6 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
+           
           ],
         ),
       ),

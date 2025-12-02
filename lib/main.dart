@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:testflutter/screens/auth/login_screen.dart';
+import 'package:testflutter/screens/auth/signup_screen.dart';
+import 'package:testflutter/screens/results/assessment_analysis_screen.dart';
+import 'package:testflutter/screens/results/assessment_results_screen.dart';
 
 // Import all screens necessary for named routes
 import 'screens/dashboard/dashboard_screen.dart'; 
@@ -29,15 +33,19 @@ class MyApp extends StatelessWidget {
         // We've already fixed the layout in the screens, but this provides the final safeguard.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: '/dashboard',
+      initialRoute: '/login',
       routes: {
+        '/login': (context) => const LoginScreen(),
         '/dashboard': (context) => const DashboardScreen(),
+        '/signup': (context) => const SignupScreen(), // Placeholder for SignupScreen
         // FIX: Using the correct screen class
         '/assessment': (context) => const AssessmentSubmissionScreen(), 
         '/leaderboard': (context) => const LeaderboardScreen(),
         // NEW: Add Badges screen route
         '/badges': (context) => const BadgesScreen(), 
         '/profile': (context) => const ProfileScreen(),
+        '/analysis': (context) => const AssessmentAnalysisScreen(), 
+        '/results': (context) => const AssessmentResultsScreen(),
       },
     );
   }

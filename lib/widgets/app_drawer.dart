@@ -42,13 +42,7 @@ class AppDrawer extends StatelessWidget {
             
             // Navigate if not already on this screen
             if (currentRoute != routeName) {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => screen,
-                  settings: RouteSettings(name: routeName),
-                ),
-              );
+              Navigator.of(context).pushReplacementNamed(routeName);
             }
           },
         ),

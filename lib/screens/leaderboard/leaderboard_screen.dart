@@ -239,6 +239,7 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
               ),
             ),
             const SizedBox(height: 20),
+       
           ],
         ),
       ),

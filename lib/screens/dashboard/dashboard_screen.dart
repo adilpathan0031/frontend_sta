@@ -37,12 +37,17 @@ class DashboardScreen extends StatelessWidget {
           children: [
             Icon(Icons.emoji_events, color: Colors.blue[600], size: 24), // Trophy icon
             const SizedBox(width: 8),
-            const Text(
-              "Sports Talent Platform",
-              style: TextStyle(
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+            // FIX: Wrap the Text with Expanded to constrain its width
+            Expanded( 
+              child: const Text(
+                "Sports Talent Platform",
+                style: TextStyle(
+                  color: Colors.black87,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
+                maxLines: 1, 
+                overflow: TextOverflow.ellipsis, // Added to handle edge cases gracefully
               ),
             ),
           ],
@@ -228,6 +233,7 @@ class DashboardScreen extends StatelessWidget {
               maxLines: 2, // Allow subtitle to wrap if needed
               overflow: TextOverflow.ellipsis,
             ),
+            const SizedBox(height: 50),
           ],
         ),
       ),
